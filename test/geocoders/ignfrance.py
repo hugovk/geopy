@@ -197,10 +197,10 @@ class IGNFranceTestCase(GeocoderTestBase):
         )
 
         departements_no_spatial = list(
-            set([
+            {
                 i.raw['departement']
                 for i in res_no_spatial_filter
-            ])
+            }
         )
 
         self.assertGreater(
@@ -278,14 +278,14 @@ class IGNFranceTestCase(GeocoderTestBase):
             {},
         )
 
-        coordinates_couples_radius = set([
+        coordinates_couples_radius = {
             (str(location.latitude) + ' ' + str(location.longitude))
             for location in res_call_radius
-        ])
-        coordinates_couples = set([
+        }
+        coordinates_couples = {
             (str(location.latitude) + ' ' + str(location.longitude))
             for location in res_call
-        ])
+        }
 
         self.assertEqual(
             coordinates_couples_radius.issubset(coordinates_couples),

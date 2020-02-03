@@ -94,7 +94,7 @@ class Baidu(Geocoder):
         Format the components dict to something Baidu understands.
         """
         return "|".join(
-            (":".join(item) for item in components.items())
+            ":".join(item) for item in components.items()
         )
 
     def geocode(

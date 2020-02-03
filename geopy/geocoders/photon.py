@@ -127,8 +127,8 @@ class Photon(Geocoder):
                 params['lon'] = lon
                 params['lat'] = lat
             except ValueError:
-                raise ValueError(("Location bias must be a"
-                                  " coordinate pair or Point"))
+                raise ValueError("Location bias must be a"
+                                  " coordinate pair or Point")
         if osm_tag:
             if isinstance(osm_tag, string_compare):
                 params['osm_tag'] = [osm_tag]

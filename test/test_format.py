@@ -1,4 +1,3 @@
-
 import unittest
 
 from geopy.format import format_degrees
